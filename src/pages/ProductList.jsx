@@ -12,6 +12,9 @@ const ProductList = () => {
   const [loading, setLoading] = useState(true)
   const [errorState, setErrorState] = useState(false)
 
+  const [subTotal, setSubTotal] = useState(0)
+  let sum = 0;
+
   const getProducts = async () => {
     try {
 
@@ -19,7 +22,9 @@ const ProductList = () => {
       
       setProducts(data)
       setErrorState(false)
-
+      sum = data.reduce((acc, val) => acc + (val.price) * val.amount * 0.8, 0)
+      setSubTotal(sum)
+      
     } catch (error) {
       console.log(error);
       setErrorState(true)
@@ -28,11 +33,13 @@ const ProductList = () => {
     }
   }
 
+
   useEffect(() => {                                          //useEffect aslinda componentDidMount demek, dependency arrayin bos olmasi
     getProducts()
   
-    
   }, [])
+
+
   
   if(errorState){
     return <p>Something went wrong...</p>            //Buraya girince alttaki return kismina hic girmiyor. Yani hata aldigimizda sadece burasi gösteriliyor. Bu kisim alttaki returnün icinde loadingden önce de yazilabilirdi
@@ -53,12 +60,15 @@ const ProductList = () => {
           <>
           <article id="product-panel" className="col-md-5">
             {
-              products.map(product => (<ProductCard getProducts={getProducts} key={product.id} {...product}/>))
+              products.map(product => (<ProductCard getData={getProducts} key={product.id} {...product}/>))
             }
             
           </article>
           <article className="col-md-5 m-3">
-            <CardTotal />
+            {
+              <CardTotal subtotal = {subTotal} />
+            }
+            
           </article>
         </>)
         }

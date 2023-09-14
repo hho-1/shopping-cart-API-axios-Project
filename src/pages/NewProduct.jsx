@@ -21,7 +21,7 @@ const NewProduct = () => {
     //console.log(formData); // setter metodu asenkron çalışır.
   };
 
-  // console.log(formData);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
