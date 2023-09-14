@@ -4,6 +4,10 @@
 
 Project aims to create a Shopping Cart App.
 
+## Project Outcome
+
+https://shopping-cart-api-axios-project.vercel.app
+
 ## Problem Statement
 
 - We are adding a new project to our portfolios. So you and your colleagues have started to work on the project.
@@ -37,7 +41,7 @@ SOLUTION
 
 ```
 
-## Outcome
+## Project Gif
 
 ![Shopping Cart](shopping-cart.gif)
 
