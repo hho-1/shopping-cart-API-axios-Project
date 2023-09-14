@@ -50,7 +50,7 @@ const About = () => {
                 <button className="btn btn-outline-primary px-4">
                   <a
                     className="text-decoration-none text-black "
-                    href="https://github.com/anthonyharold67"
+                    href="https://github.com/hho-1"
                     target="true">
                     Message
                   </a>
