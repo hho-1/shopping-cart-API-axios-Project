@@ -37,6 +37,13 @@ const ProductCard = ({
     getData(); // işlem bittikten sonra güncel veriyi tekrar backendden istiyoruz.
   };
 
+
+  const handleUpdate = () => {
+    navigate(`/update-product/${name}`, {
+      state: { name, image, price, dampingRate, amount, id },
+    })
+  }
+
   return (
     <div className="card shadow-lg mb-3">
       <div className="row g-0">
@@ -89,6 +96,11 @@ const ProductCard = ({
               </div>
             </div>
             <div className="product-removal mt-4">
+              <button
+                className="btn btn-success btn-sm w-100 update-product mb-2"
+                onClick={handleUpdate}>
+                <i className="fa-solid fa-edit me-2"></i>Update
+              </button>
               <button
                 className="btn btn-danger btn-sm w-100 remove-product"
                 onClick={handleRemove}>

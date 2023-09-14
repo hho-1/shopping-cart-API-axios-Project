@@ -5,24 +5,21 @@ import ProductForm from "../components/ProductForm";
 
 const UpdateProduct = () => {
   const { state } = useLocation();
-  console.log(state);
+  
   const { title } = useParams();
   console.log(title);
   const navigate = useNavigate();
   const [formData, setFormData] = useState(state); //formData nın başlangıç değerine gelen veriyi verdim ki formum dolu olsun
 
   const handleChange = e => {
-    // console.log(e.target);
-    // console.log(e.target.id);
 
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  // console.log(formData);
 
   const handleSubmit = async e => {
     e.preventDefault();
-    // console.log(formData);
+
     await axios.put(
     `https://63f4e5583f99f5855db9e941.mockapi.io/products/${state.id}`,
       formData
