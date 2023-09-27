@@ -6,7 +6,7 @@ const shipping = 25;
 const CardTotal = ({subtotal}) => {
   
   let taxAmount = (taxRate * subtotal).toFixed(2);
-  let aggregate = Number(subtotal) + Number(taxAmount) + Number(shipping)
+  let aggregate = (Number(subtotal) + Number(taxAmount) + Number(shipping)).toFixed(2)
   
   return (
     <table className="table w-100 fs-4">
