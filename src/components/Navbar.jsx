@@ -4,7 +4,7 @@ import '../index.css'
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-secondary">
+    <nav className="mainNav navbar navbar-expand-lg" >
     <div className="container-fluid">
       <span className="navbar-brand text-white" href="#">Shopping Cart</span>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
