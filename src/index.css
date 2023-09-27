@@ -4,9 +4,18 @@
   box-sizing: border-box;
 }
 body {
-  background: #f1f2b5;
-  background: -webkit-linear-gradient(to right, #135058, #f1f2b5);
-  background: linear-gradient(to right, #135058, #f1f2b5);
+  background: #f2709c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff9472, #f2709c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.container{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .main {
